@@ -1,0 +1,25 @@
+<div class="container">
+    <img [src]="food.imageUrl" [alt]="food.name">
+</div>
+<div class="details">
+    <div class="header">
+        <span class="name">
+            {{food.name}}
+        </span>
+        <span class="favorite {{food.favorite?'':'not'}}">
+            ♥
+
+        </span>
+    </div>
+    <div class="star">
+        <ngb-rating [max]="5" sizelit-fill="fill" [(rate)]="food.star" [readonly]="true" aria-setsize="24px">
+        </ngb-rating>
+    </div>
+    <div class="origins">
+        <span *ngFor="let origins of food.origins">
+            {{origins}}
+        </span>
+    </div>
+
+
+</div>
